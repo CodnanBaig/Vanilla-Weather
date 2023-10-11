@@ -1,0 +1,83 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Masai Weather</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left">
+        <form action="">
+          <input type="search" name="" id="search" />
+          <input type="submit" value="Search" id="search-btn" />
+        </form>
+      </div>
+      <div class="right">
+        <i onclick="showCurrent()" style="cursor: pointer;" class="fa-solid fa-location-arrow fa-xl"></i>
+        <button class="btn">Different Weather?</button>
+        <div class="met-imp">
+          <p id="metric">Metric: °C, m/s</p>
+          <p id="imperial">Imperial: °F, mph</p>
+        </div>
+      </div>
+    </nav>
+    <section id="main">
+      <div class="container">
+        <div class="details">
+          <div class="location">
+            <p id="date-time"></p>
+            <h1 id="city"></h1>
+          </div>
+          <div class="weather">
+            <div class="wthr" style="display: inline-flex">
+              <img style="width: 25%" id="weather-icon" alt="" />
+              <h1 id="temp"></h1>
+            </div>
+            <h2 id="desc"></h2>
+            <div class="points">
+              <p id="wind"></p>
+              <p id="comp"></p>
+              <p id="humidity"></p>
+              <p id="min-temp"></p>
+              <p id="max-temp"></p>
+              <p id="visibility"></p>
+            </div>
+          </div>
+        </div>
+        <div style="background-color: antiquewhite" class="map">
+          <iframe
+          id="map"
+            style="border: 0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+      <button class="btn" id="show-forcast" style="margin-top: 2%; margin-left: 5%;" onclick="showForecast()">Forecast</button>
+    </section>
+    <section id="forecast">
+        <h1 style="text-align: center; color: white; font-size: 26px; padding-top: 5%;">5 Days Forecast</h1>
+        <p style="text-align: center; color: white;font-size: 12px;">*As per the weather at 12PM</p>
+        <div id="container">
+
+        </div>
+    </section>
+  </body>
+</html>
+<script src="index.js"></script>
